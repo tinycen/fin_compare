@@ -55,11 +55,15 @@ $$本金 = \sum_{i=1}^{n} \frac{第i期支付金额}{(1+IRR)^i}$$
 2. **计算月IRR**：
    - 本程序使用牛顿迭代法求解月IRR值
    - 牛顿迭代法通过不断逼近使净现值(NPV)等于0的折现率
-   - **迭代公式**：$$IRR_{new} = IRR_{old} - \frac{NPV(IRR_{old})}{NPV'(IRR_{old})}$$
+   - **迭代公式**：
+     $$IRR_{new} = IRR_{old} - \frac{NPV(IRR_{old})}{NPV'(IRR_{old})}$$
    
-   - **净现值(NPV)计算**：$$NPV(IRR) = -本金 + \sum_{i=1}^{n} \frac{每期支付金额}{(1+IRR)^i}$$
+   - **净现值(NPV)计算**：
+     $$NPV(IRR) = -本金 + \sum_{i=1}^{n} \frac{每期支付金额}{(1+IRR)^i}$$
    
-   - **净现值导数(NPV')计算**：$$NPV'(IRR) = -\sum_{i=1}^{n} \frac{i \times 每期支付金额}{(1+IRR)^{i+1}}$$
+   - **净现值导数(NPV')计算**：
+     $$NPV'(IRR) = -\sum_{i=1}^{n} \frac{i \times 每期支付金额}{(1+IRR)^{i+1}}$$
+   
    - 当两次迭代结果的差值小于0.000001时停止迭代
    
 3. **年化利率转换**：
